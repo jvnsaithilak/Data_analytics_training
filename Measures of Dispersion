@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyNdWMchHtwnAc8NAKO1hTLR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jvnsaithilak/Data_analytics_training/blob/main/Measures%20of%20Dispersion\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "FRa-BAf7GBSU"
+      },
+      "outputs": [],
+      "source": [
+        "data = [10,20,30,40,50,50,70,80,90,100]\n",
+        "range_value = max(data) - min(data)\n",
+        "print(\"Range =\", range_value)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import statistics\n",
+        "data = [10,20,30,40,50,50,70,80,90,100]\n",
+        "variance = statistics.variance(data)\n",
+        "print(\"Variance =\", variance)"
+      ],
+      "metadata": {
+        "id": "Or5mx6BDGTV6"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import statistics\n",
+        "data = [10,20,30,40,50,50,70,80,90,100]\n",
+        "std_dev = statistics.stdev(data)\n",
+        "print(\"Standard Deviation =\", std_dev)"
+      ],
+      "metadata": {
+        "id": "4oR6nzjXGTgj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "data = [10,20,30,40,50,50,70,80,90,100]\n",
+        "q1 = np.percentile(data, 25)\n",
+        "q3 = np.percentile(data, 75)\n",
+        "iqr = q3 - q1\n",
+        "print(\"IQR =\", iqr)"
+      ],
+      "metadata": {
+        "id": "vjt3CctyGTyL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data = [10,20,30,40,50,50,70,80,90,100]\n",
+        "mean = sum(data) / len(data)\n",
+        "mean_deviation = sum(abs(x - mean) for x in data) / len(data)\n",
+        "print(mean_deviation)"
+      ],
+      "metadata": {
+        "id": "eBRgHPiGHJtx"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
